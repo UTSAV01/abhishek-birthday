@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Abhishek 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .scroll-down {
+      margin-top: 30px;
+      font-size: 1rem;
+      opacity: 0.8;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+      color: #ff4d6d;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 40px 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #ff4d6d;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      display: flex;
+      justify-content: flex-start;
+      margin: 30px 0;
+      width: 50%;
+      padding: 20px;
+    }
+    .timeline-item.right {
+      margin-left: 50%;
+      justify-content: flex-end;
+    }
+    .timeline-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Message */
+    .message {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      animation: fall 5s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before { left: 20px; }
+      .timeline-item, .timeline-item.right {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Happy Birthday 🎂</h1>
+    <h1>Abhishek Kumar</h1>
+    <p>Another year older, another year more awesome 😎</p>
+    <div class="scroll-down">⬇ Scroll for surprises ⬇</div>
+  </header>
+
+  <section>
+    <h2>✨ Memory Lane ✨</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">The day the legend named Abhishek entered our lives 👑</div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-content">Countless laughs, stupid jokes, and unforgettable moments 😂</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">Still growing, still winning, still being YOU 💪</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>📸 Favorite Moments</h2>
+    <div class="gallery">
+      <!-- Replace src with your photo -->
+      <img src="your-photo.jpg" alt="Abhishek photo">
+    </div>
+  </section>
+
+  <section>
+    <h2>💌 A Message For You</h2>
+    <div class="message">
+      Hey Abhishek! 🎉<br><br>
+      Today isn’t just your birthday, it’s a reminder that the world became a little more fun the day you arrived. 
+      You’ve got the rare talent of making boring moments memorable and serious situations hilarious. 
+      May this year bring you insane success, good health, crazy adventures, and endless reasons to smile. 
+      Never stop being the fun, real, and awesome person you are. 
+      <br><br>
+      Cheers to more memories, more laughter, and more cake! 🍰🔥
+    </div>
+  </section>
+
+  <footer>
+    Made with ❤️ just for Abhishek
+  </footer>
+
+  <script>
+    // Confetti generator
+    for (let i = 0; i < 40; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      confetti.style.animationDuration = 3 + Math.random() * 3 + 's';
+      document.body.appendChild(confetti);
+    }
+  </script>
+
+</body>
+</html>
