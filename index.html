@@ -1,145 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Level Up Abhishek 🎮</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Abhishek 🌄</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #1b1b2f, #000);
+      background: linear-gradient(to bottom, #1e3c72, #f7b733);
       color: #fff;
-      text-align: center;
       overflow-x: hidden;
     }
 
     header {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      text-align: center;
       padding: 20px;
+      position: relative;
+    }
+
+    .hero {
+      max-width: 700px;
+      animation: fadeIn 2s ease;
     }
 
     h1 {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 2rem;
-      color: #00ffcc;
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
       margin-bottom: 15px;
     }
 
     h2 {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
+      font-size: 1.3rem;
+      font-weight: 300;
       opacity: 0.9;
     }
 
-    .level-box {
-      background: #111;
-      border: 3px solid #00ffcc;
-      border-radius: 15px;
-      padding: 30px;
-      max-width: 400px;
-      width: 100%;
-      box-shadow: 0 0 25px #00ffcc55;
-    }
-
-    .level {
-      font-size: 2.5rem;
-      color: #ffd369;
-      margin-bottom: 15px;
-      font-family: 'Press Start 2P';
-    }
-
-    .xp-bar {
-      width: 100%;
-      height: 18px;
-      background: #333;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 10px;
-    }
-
-    .xp-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #00ffcc, #00ffaa);
-      animation: fillXP 3s forwards;
-    }
-
-    @keyframes fillXP {
-      to { width: 100%; }
+    .sun {
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, #fff3b0, #f7b733);
+      border-radius: 50%;
+      margin: 40px auto;
+      box-shadow: 0 0 60px rgba(255, 223, 100, 0.8);
+      animation: rise 4s ease-out forwards;
     }
 
     section {
-      padding: 70px 20px;
+      padding: 80px 20px;
       max-width: 900px;
       margin: auto;
+      text-align: center;
     }
 
     section h3 {
-      font-size: 1.8rem;
-      margin-bottom: 40px;
-      color: #ffd369;
-    }
-
-    .achievements {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #111;
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 0 20px #000;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 0 25px #00ffcc55;
-    }
-
-    .emoji {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 30px;
     }
 
     .message {
-      background: #111;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
       border-radius: 20px;
       padding: 40px;
-      box-shadow: 0 0 30px #000;
       font-size: 1.1rem;
       line-height: 1.8;
     }
 
     footer {
+      text-align: center;
       padding: 30px;
-      opacity: 0.6;
       font-size: 0.9rem;
+      opacity: 0.7;
     }
 
-    .confetti {
-      position: fixed;
-      top: -10px;
-      width: 10px;
-      height: 10px;
-      animation: fall linear infinite;
+    .mountains {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 35%;
+      background: linear-gradient(to top, #0f2027, transparent);
     }
 
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(360deg);
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes rise {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
@@ -147,72 +110,33 @@
 <body>
 
 <header>
-  <h1>🎮 LEVEL UP!</h1>
-  <h2>Player: Abhishek Kumar</h2>
-
-  <div class="level-box">
-    <div class="level">LEVEL UNLOCKED</div>
-    <div class="xp-bar">
-      <div class="xp-fill"></div>
-    </div>
-    <p>XP MAXED • New Year Unlocked 🎉</p>
+  <div class="hero">
+    <h1>Happy Birthday</h1>
+    <h1>Abhishek Kumar</h1>
+    <h2>Another year higher. Another view clearer.</h2>
+    <div class="sun"></div>
   </div>
+  <div class="mountains"></div>
 </header>
 
 <section>
-  <h3>🏆 Achievements Unlocked</h3>
-  <div class="achievements">
-    <div class="card">
-      <div class="emoji">😂</div>
-      <h4>Meme Lord</h4>
-      <p>Making everyone laugh since forever</p>
-    </div>
-    <div class="card">
-      <div class="emoji">🔥</div>
-      <h4>Legend Mode</h4>
-      <p>Style, swag & confidence maxed out</p>
-    </div>
-    <div class="card">
-      <div class="emoji">🎉</div>
-      <h4>Party Starter</h4>
-      <p>No celebration begins without you</p>
-    </div>
-    <div class="card">
-      <div class="emoji">👑</div>
-      <h4>Best Human</h4>
-      <p>Rare character. 100% real.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h3>💌 Message from the Game Dev</h3>
+  <h3>🌄 A New Sunrise</h3>
   <div class="message">
-    Abhishek, today you didn’t just grow older —  
-    you **leveled up**. 🎮  
-    <br><br>
-    May this new level unlock bigger wins, better memories,
-    crazy adventures, and unlimited happiness.
-    Keep grinding, keep smiling, and never lose your fun side.
-    <br><br>
-    🎂 GAME ON & HAPPY BIRTHDAY!
+    Every birthday is a quiet reminder that you’ve climbed another mountain.<br><br>
+
+    Some climbs were easy, some were exhausting —  
+    but you kept moving, learning, growing.<br><br>
+
+    As the sun rises on another year of your life,  
+    may it bring clarity, peace, strength, and moments that make you pause and smile.<br><br>
+
+    Keep climbing. The views only get better from here. 🌅
   </div>
 </section>
 
 <footer>
-  Made with ❤️ by Utsav
+  Made with ❤️ by Utsav and Panda
 </footer>
-
-<script>
-  for (let i = 0; i < 50; i++) {
-    const c = document.createElement("div");
-    c.className = "confetti";
-    c.style.left = Math.random() * 100 + "vw";
-    c.style.backgroundColor = `hsl(${Math.random()*360},100%,50%)`;
-    c.style.animationDuration = 3 + Math.random() * 3 + "s";
-    document.body.appendChild(c);
-  }
-</script>
 
 </body>
 </html>
