@@ -5,16 +5,12 @@
   <title>Happy Birthday Abhishek 🎂</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -23,245 +19,178 @@
       overflow-x: hidden;
     }
 
-    /* --- HERO SECTION (The Elegant Dark Theme) --- */
+    /* --- HERO SECTION --- */
     .hero {
       height: 100vh;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8)),
-        url('mountain1.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('mountain1.jpg') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;
     }
-
-    .hero-content {
-      max-width: 800px;
-      animation: fadeUp 1.5s ease;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      margin-bottom: 15px;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      opacity: 0.9;
-      letter-spacing: 1px;
-    }
+    .hero-content { max-width: 800px; animation: fadeUp 1.5s ease; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 15px; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+    .hero p { font-size: 1.3rem; opacity: 0.9; letter-spacing: 1px; }
 
     /* --- MESSAGE SECTION --- */
     .message-section {
-      position: relative;
-      background: #f8f9fa; /* Clean light gray */
-      color: #333;
-      padding: 120px 20px;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
+      position: relative; background: #f8f9fa; color: #333; padding: 100px 20px;
+      display: flex; justify-content: center;
     }
-
-    /* Keep the Petals (You liked these) */
     .message-section::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url("petals.png");
-      background-repeat: repeat;
-      background-size: 400px;
-      opacity: 0.5;
-      animation: petalsFall 25s linear infinite;
-      pointer-events: none;
+      content: ""; position: absolute; inset: 0;
+      background-image: url("petals.png"); background-size: 400px; opacity: 0.5;
+      animation: petalsFall 25s linear infinite; pointer-events: none;
     }
-
-    /* THE NEW CARD DESIGN */
     .message-box {
-      max-width: 750px;
-      width: 100%;
-      background: #fff;
-      border-radius: 16px;
-      padding: 60px 40px;
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      
-      /* A soft, colorful shadow to give "Birthday Vibe" without being messy */
-      box-shadow: 
-        0 20px 60px rgba(0,0,0,0.1),
-        0 0 0 1px rgba(0,0,0,0.05); /* Thin border */
+      max-width: 750px; width: 100%; background: #fff; border-radius: 16px; padding: 60px 40px;
+      position: relative; z-index: 10; text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
     }
-
-    /* Top Decoration: Birthday Cake Icon */
-    .card-icon {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      display: inline-block;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
-      animation: floatIcon 3s ease-in-out infinite;
+    .card-icon { font-size: 3.5rem; margin-bottom: 20px; display: inline-block; animation: floatIcon 3s ease-in-out infinite; }
+    .message-box h2 {
+      font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 25px;
+      background: -webkit-linear-gradient(45deg, #ff5f6d, #ffc371); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-
-    /* Corner Decorations: CSS Confetti (Clean & Colorful) */
+    .message-box p { font-size: 1.15rem; line-height: 1.9; color: #555; }
+    
+    /* Corner confetti details */
     .corner-decoration {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      pointer-events: none;
-      background-image: 
-        radial-gradient(circle, #ff5f6d 4px, transparent 5px),
-        radial-gradient(circle, #f1c40f 4px, transparent 5px),
-        radial-gradient(circle, #3498db 4px, transparent 5px);
-      background-size: 30px 30px; /* Space out the dots */
-      opacity: 0.6;
+      position: absolute; width: 100px; height: 100px; pointer-events: none;
+      background-image: radial-gradient(circle, #ff5f6d 4px, transparent 5px), radial-gradient(circle, #f1c40f 4px, transparent 5px), radial-gradient(circle, #3498db 4px, transparent 5px);
+      background-size: 30px 30px; opacity: 0.6;
     }
+    .top-left { top: 10px; left: 10px; mask-image: linear-gradient(to bottom right, black, transparent); -webkit-mask-image: linear-gradient(to bottom right, black, transparent); }
+    .bottom-right { bottom: 10px; right: 10px; transform: rotate(180deg); mask-image: linear-gradient(to bottom right, black, transparent); -webkit-mask-image: linear-gradient(to bottom right, black, transparent); }
 
-    .top-left { 
-      top: 10px; left: 10px; 
-      mask-image: linear-gradient(to bottom right, black, transparent);
-      -webkit-mask-image: linear-gradient(to bottom right, black, transparent);
+
+    /* --- NEW REALISTIC CAKE SECTION --- */
+    .cake-section {
+      min-height: 70vh;
+      background: radial-gradient(circle at center, #333, #111); /* Spotlight effect background */
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 50px 20px; text-align: center;
     }
     
-    .bottom-right { 
-      bottom: 10px; right: 10px; 
-      transform: rotate(180deg);
-      mask-image: linear-gradient(to bottom right, black, transparent);
-      -webkit-mask-image: linear-gradient(to bottom right, black, transparent);
+    .cake-container {
+      position: relative; width: 260px; height: 260px; margin-top: 30px; cursor: pointer;
     }
 
-    .message-box h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 25px;
-      /* Gradient Text for Celebration Feel */
-      background: -webkit-linear-gradient(45deg, #ff5f6d, #ffc371);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    /* Realistic Cake Body */
+    .cake-body {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 220px; height: 140px;
+      /* Gradient for rounded 3D look */
+      background: linear-gradient(to right, #c49576, #e3c3a8 40%, #e3c3a8 60%, #c49576);
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    /* Realistic Icing */
+    .icing {
+      position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+      width: 230px; height: 60px;
+      background: linear-gradient(to right, #ecf0f1, #ffffff 50%, #ecf0f1);
+      border-radius: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1), inset 0 -5px 10px rgba(0,0,0,0.05);
+      z-index: 2;
+    }
+    
+    /* Warm Glow on top of cake */
+    .cake-glow {
+      position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
+      width: 200px; height: 50px;
+      background: radial-gradient(ellipse, rgba(255, 180, 0, 0.3), transparent 70%);
+      animation: pulseGlow 1s infinite alternate;
+      z-index: 3;
+      pointer-events: none;
     }
 
-    .message-box p {
-      font-size: 1.15rem;
-      line-height: 1.9;
-      color: #555;
+    /* Realistic Candle */
+    .candle {
+      position: absolute; bottom: 135px; width: 16px; height: 60px;
+      /* 3D gradient */
+      background: linear-gradient(to right, #e74c3c, #ff7675 50%, #e74c3c);
+      border-radius: 3px;
+      z-index: 4;
+    }
+    /* The Wick */
+    .candle::before {
+      content: ""; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+      width: 2px; height: 10px; background: #333; border-radius: 2px;
     }
 
-    /* --- JOURNEY SECTION --- */
+    .c1 { left: 122px; }
+    .c2 { left: 85px; transform: rotate(-8deg); }
+    .c3 { left: 160px; transform: rotate(8deg); }
+
+    /* Realistic Flame */
+    .flame {
+      position: absolute; top: -28px; left: 50%;
+      width: 18px; height: 28px;
+      /* Teardrop shape */
+      border-radius: 50% 50% 35% 35%;
+      /* Realistic fire gradient: Blue base, orange core, yellow tip */
+      background: radial-gradient(ellipse at bottom, rgba(0,0,150,0.4) 0%, rgba(255,100,0,0.9) 50%, rgba(255,255,0,1) 80%);
+      box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+      transform-origin: center bottom;
+      animation: flickerRealistic 0.15s infinite alternate;
+      transition: all 0.5s ease;
+      opacity: 0.9;
+    }
+    
+    .flame-off { opacity: 0; transform: scale(0.5); }
+
+    .instruction-text {
+      margin-top: 50px; font-size: 1.2rem; color: #ccc; font-family: 'Playfair Display', serif;
+      animation: pulseText 2s infinite;
+    }
+
+    /* --- HIDDEN SECTIONS --- */
+    #hiddenSurprise { display: none; opacity: 0; transition: opacity 1.5s ease; }
+
+    /* JOURNEY & MYSTERY (Kept same) */
     .journey {
-      min-height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
-        url('mountain2.jpg') center/cover no-repeat;
-      color: #fff;
-      font-size: 1.5rem;
-      font-family: 'Playfair Display', serif;
+      min-height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 20px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('mountain2.jpg') center/cover no-repeat;
+      color: #fff; font-size: 1.5rem; font-family: 'Playfair Display', serif;
     }
-
-    /* --- MYSTERY SECTION --- */
     .mystery-section {
-      min-height: 100vh;
-      text-align: center;
-      padding: 120px 20px;
-      color: #fff;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.7), #000),
-        url('mountain-night.jpg') center/cover no-repeat;
+      min-height: 80vh; text-align: center; padding: 100px 20px; color: #fff;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), #000), url('mountain-night.jpg') center/cover no-repeat;
     }
-
-    .mystery-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 60px;
-    }
-
-    /* GIFT BOX */
+    .mystery-section h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 60px; }
     .gift-box {
-      width: 180px;
-      height: 180px;
-      margin: auto;
-      position: relative;
-      border-radius: 18px;
+      width: 180px; height: 180px; margin: auto; position: relative; border-radius: 18px;
       background: linear-gradient(145deg, #ff5f6d, #ffc371);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5); cursor: pointer; transition: transform 0.3s ease;
+      display: flex; align-items: center; justify-content: center;
     }
-
-    .gift-box:hover {
-      transform: scale(1.05) rotate(-2deg);
-    }
-
+    .gift-box:hover { transform: scale(1.05) rotate(-2deg); }
     .ribbon-vertical { position: absolute; width: 24px; height: 100%; background: #fff; left: 50%; transform: translateX(-50%); }
     .ribbon-horizontal { position: absolute; height: 24px; width: 100%; background: #fff; top: 50%; transform: translateY(-50%); }
-    
-    .bow {
-      position: absolute;
-      top: -30px;
-      font-size: 3rem;
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
-    }
+    .bow { position: absolute; top: -30px; font-size: 3rem; }
+    .gift-text { position: absolute; bottom: -40px; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
 
-    .gift-text {
-      position: absolute;
-      bottom: -40px;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      opacity: 0.8;
-    }
-
-    /* MEMORY VIEWER */
-    .memory-viewer {
-      display: none;
-      margin-top: 50px;
-    }
-
+    .memory-viewer { display: none; margin-top: 50px; }
     .memory-viewer img {
-      width: 90%;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.8);
-      animation: fadeUp 1s ease;
-      border: 4px solid #fff;
+      width: 90%; max-width: 600px; border-radius: 12px; border: 4px solid #fff;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8); animation: fadeUp 1s ease;
     }
+    .memory-viewer p { margin-top: 25px; font-size: 1rem; opacity: 0.8; }
+    footer { background: #000; text-align: center; padding: 40px; font-size: 0.8rem; color: #666; }
 
-    .memory-viewer p {
-      margin-top: 25px;
-      font-size: 1rem;
-      opacity: 0.8;
+    /* ANIMATIONS */
+    @keyframes flickerRealistic {
+      0% { transform: translateX(-50%) scale(1) rotate(-2deg); opacity: 0.9; }
+      50% { transform: translateX(-50%) scale(1.05) rotate(2deg) skewX(3deg); opacity: 1; }
+      100% { transform: translateX(-50%) scale(0.95) rotate(-1deg) skewX(-3deg); opacity: 0.85; }
     }
-
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 40px;
-      font-size: 0.8rem;
-      color: #666;
+    @keyframes pulseGlow {
+      0% { opacity: 0.3; transform: translateX(-50%) scale(1); }
+      100% { opacity: 0.6; transform: translateX(-50%) scale(1.1); }
     }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes petalsFall {
-      from { background-position: 0 -600px; }
-      to { background-position: 0 900px; }
-    }
-    
-    @keyframes floatIcon {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes petalsFall { from { background-position: 0 -600px; } to { background-position: 0 900px; } }
+    @keyframes pulseText { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+    @keyframes floatIcon { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
@@ -275,82 +204,104 @@
   <div class="hero">
     <div class="hero-content">
       <h1> आपको जन्मदिन की ढेर सारी शुभकामनाएं!</h1>
-      <p>भगवान से यही प्रार्थना है कि आपके जीवन में हमेशा खुशियाँ बनी रहें और सफलता आपके कदम चूमे।.</p>
+      <p> भगवान से यही प्रार्थना है कि आपके जीवन में हमेशा खुशियाँ बनी रहें और सफलता आपके कदम चूमे।</p>
     </div>
   </div>
 
   <section class="message-section">
     <div class="message-box">
-      
       <div class="corner-decoration top-left"></div>
       <div class="corner-decoration bottom-right"></div>
-
-      <div class="card-icon">🎂</div>
-
-      <h2> Own Your Year </h2>
+      <div class="card-icon">👑</div>
+      <h2>Own Your Year</h2>
       <p>
         Happy Birthday, Abhishek! Another lap around the sun, another year stronger.
         Keep chasing what matters, keep ignoring the noise, and just keep being you.
         Wishing you 365 days of success, happiness, and zero regrets.<br><br>
         Friends are blessings and I'm forever grateful to have you by my side.
-        May you recieve all the world's best in everything.<br><br>
-        Happy Birthday to you!
-      </p>
+        May you recieve all the world's best in everything.<br><br> 
+        <strong>Happy Birthday to you!</strong>
       </p>
     </div>
   </section>
 
-  <div class="journey">
-    "Some memories deserve to be opened slowly."
-  </div>
+  <section class="cake-section" id="cakeSection">
+    
+    <div class="cake-container" id="cakeContainer">
+      <div class="cake-body"></div>
+      <div class="icing"></div>
+      <div class="cake-glow" id="cakeGlow"></div>
 
-  <div class="mystery-section">
-    <h2>A Small Surprise Awaits 🎁</h2>
-
-    <div class="gift-box" id="mysteryBox">
-      <div class="ribbon-vertical"></div>
-      <div class="ribbon-horizontal"></div>
-      <div class="bow">🎀</div>
-      <span class="gift-text">Click to Open</span>
+      <div class="candle c1"><div class="flame" id="f1"></div></div>
+      <div class="candle c2"><div class="flame" id="f2"></div></div>
+      <div class="candle c3"><div class="flame" id="f3"></div></div>
     </div>
 
-    <div class="memory-viewer" id="memoryViewer">
-      <img id="memoryImage" src="">
-      <p id="memoryCounter"></p>
+    <p class="instruction-text" id="cakeText">Make a wish & tap to blow the candles 🕯️</p>
+
+  </section>
+
+  <div id="hiddenSurprise">
+    <div class="journey">"Some memories deserve to be opened slowly."</div>
+    <div class="mystery-section">
+      <h2>A Small Surprise Awaits 🎁</h2>
+      <div class="gift-box" id="mysteryBox">
+        <div class="ribbon-vertical"></div>
+        <div class="ribbon-horizontal"></div>
+        <div class="bow">🎀</div>
+        <span class="gift-text">Click to Open</span>
+      </div>
+      <div class="memory-viewer" id="memoryViewer">
+        <img id="memoryImage" src="">
+        <p id="memoryCounter"></p>
+      </div>
     </div>
   </div>
 
-  <footer>
-    Made with ❤️ by Panda
-  </footer>
+  <footer>Made with ❤️ by Panda</footer>
 
   <script>
     const images = [
-      "photo1.png",
-      "photo2.png"
+      "photo1.png", "photo2.png"
     ];
-
     let index = 0;
-    const box = document.getElementById("mysteryBox");
+    
+    const cakeContainer = document.getElementById("cakeContainer");
+    const flames = document.querySelectorAll(".flame");
+    const cakeGlow = document.getElementById("cakeGlow"); // Get the glow element
+    const cakeText = document.getElementById("cakeText");
+    const hiddenSurprise = document.getElementById("hiddenSurprise");
+    
+    const giftBox = document.getElementById("mysteryBox");
     const viewer = document.getElementById("memoryViewer");
     const img = document.getElementById("memoryImage");
     const counter = document.getElementById("memoryCounter");
 
-    box.addEventListener("click", () => {
-      // Confetti Explosion
-      confetti({
-        particleCount: 150,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#ff5f6d', '#ffc371', '#3498db']
-      });
-
-      // Hide Box
-      box.style.transform = "scale(0.8)";
-      box.style.opacity = "0";
+    // CAKE CLICK
+    cakeContainer.addEventListener("click", () => {
+      flames.forEach(flame => flame.classList.add("flame-off"));
+      cakeGlow.style.opacity = "0"; // Turn off the glow too
       
+      cakeText.innerText = "Wish Granted! ✨";
+      cakeText.style.color = "#ffc371";
+      cakeText.style.animation = "none";
+
       setTimeout(() => {
-        box.style.display = "none";
+        hiddenSurprise.style.display = "block";
+        setTimeout(() => {
+          hiddenSurprise.style.opacity = "1";
+          hiddenSurprise.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }, 1000);
+    });
+
+    // GIFT CLICK
+    giftBox.addEventListener("click", () => {
+      confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#ff5f6d', '#ffc371', '#3498db'] });
+      giftBox.style.transform = "scale(0.8)";
+      giftBox.style.opacity = "0";
+      setTimeout(() => {
+        giftBox.style.display = "none";
         viewer.style.display = "block";
         showNext();
       }, 500);
@@ -368,4 +319,3 @@
 
 </body>
 </html>
-
