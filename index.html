@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title> अभिषेक को जनमदिन की हार्दिक बधाई 🌄</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Abhishek 🌄</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <style>
     * {
@@ -16,20 +18,17 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      color: #fff;
       background: #000;
+      color: #fff;
+      overflow-x: hidden; /* Prevents horizontal scroll from flowers */
     }
 
     /* HERO SECTION */
     .hero {
       height: 100vh;
       background:
-        linear-gradient(
-          to bottom,
-          rgba(0,0,0,0.45),
-          rgba(0,0,0,0.65)
-        ),
-        url('mountain.jpg') center/cover no-repeat;
+        linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.7)),
+        url('mountain1.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -54,60 +53,220 @@
     }
 
     /* MESSAGE SECTION */
-    section {
+    .message-section {
+      position: relative;
       background: #f5f5f5;
       color: #333;
-      padding: 100px 20px;
+      padding: 120px 20px;
+      overflow: hidden; /* Keeps petals inside */
     }
 
+    /* Falling Petals Background */
+    .message-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("petals.png"); /* Ensure you have this image */
+      background-repeat: repeat;
+      background-size: 420px;
+      opacity: 0.55;
+      animation: petalsFall 28s linear infinite;
+      pointer-events: none;
+      z-index: 5; 
+    }
+
+    /* The White Card */
     .message-box {
       max-width: 850px;
       margin: auto;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       border-radius: 20px;
-      padding: 50px;
+      padding: 55px;
       font-size: 1.1rem;
       line-height: 1.9;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-      animation: fadeUp 1.5s ease;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+      position: relative; /* Needed for flowers positioning */
+      z-index: 2; /* Sits above the background petals */
+    }
+
+    /* New Wrapper for Text to keep it on top of flowers */
+    .text-content {
+      position: relative;
+      z-index: 10; /* Ensures text is readable over flowers */
     }
 
     .message-box h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       text-align: center;
     }
 
+    /* --- FLOWER BLENDING CSS --- */
+    .flower {
+      position: absolute;
+      max-width: 180px; /* Slightly larger for impact */
+      height: auto;
+      z-index: 1; /* Behind text, inside box */
+      
+      /* The Blending Magic */
+      opacity: 0.85;
+      mix-blend-mode: multiply; /* Melds color into the white paper */
+      filter: contrast(110%) brightness(110%);
+      
+      /* Soft Edges (Masking) to remove square borders */
+      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+      mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+      
+      pointer-events: none;
+    }
+
+    /* Natural Positioning */
+    .flower-top-left { 
+      top: -40px; left: -40px; 
+      transform: rotate(-15deg) scale(1.1);
+    }
+    .flower-top-right { 
+      top: -30px; right: -30px; 
+      transform: rotate(15deg) scale(0.9);
+    }
+    .flower-bottom-left { 
+      bottom: -40px; left: -40px; 
+      transform: rotate(-10deg) scale(0.95);
+    }
+    .flower-bottom-right { 
+      bottom: -45px; right: -45px; 
+      transform: rotate(10deg) scale(1.15);
+    }
+
+    /* JOURNEY SECTION */
+    .journey {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
+        url('mountain2.jpg') center/cover no-repeat;
+      color: #fff;
+      font-size: 1.6rem;
+      line-height: 1.9;
+    }
+
+    /* MYSTERY SECTION */
+    .mystery-section {
+      min-height: 100vh;
+      text-align: center;
+      padding: 120px 20px;
+      color: #fff;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+        url('mountain-night.jpg') center/cover no-repeat;
+    }
+
+    .mystery-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 60px;
+    }
+
+    /* GIFT BOX */
+    .gift-box {
+      width: 200px;
+      height: 200px;
+      margin: auto;
+      position: relative;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #ff5f6d, #ffc371);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+      cursor: pointer;
+      transition: all 0.5s ease; /* Smoother transition */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.08) rotate(-1deg);
+    }
+
+    .ribbon-vertical {
+      position: absolute;
+      width: 26px;
+      height: 100%;
+      background: #fff;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .ribbon-horizontal {
+      position: absolute;
+      height: 26px;
+      width: 100%;
+      background: #fff;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .bow {
+      position: absolute;
+      top: -28px;
+      font-size: 2.5rem;
+    }
+
+    .gift-text {
+      position: absolute;
+      bottom: 18px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+
+    /* MEMORY VIEWER */
+    .memory-viewer {
+      display: none;
+      margin-top: 70px;
+    }
+
+    .memory-viewer img {
+      width: 90%;
+      max-width: 650px;
+      border-radius: 22px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+      animation: fadeUp 1.2s ease;
+    }
+
+    .memory-viewer p {
+      margin-top: 25px;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
     footer {
+      background: #111;
       text-align: center;
       padding: 30px;
-      background: #111;
       font-size: 0.9rem;
       opacity: 0.7;
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes petalsFall {
+      from { background-position: 0 -600px; }
+      to { background-position: 0 900px; }
     }
 
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .hero p {
-        font-size: 1.1rem;
-      }
-      .message-box {
-        padding: 35px 25px;
-      }
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1.1rem; }
+      .message-box { padding: 40px 25px; }
     }
   </style>
 </head>
@@ -116,33 +275,108 @@
 
   <div class="hero">
     <div class="hero-content">
-      <h1>अभिषेक को जनमदिन की हार्दिक बधाई</h1>
+      <h1>Happy Birthday Abhishek</h1>
       <p>Another year. Another sunrise. Another beautiful climb.</p>
     </div>
   </div>
 
-  <section>
+  <section class="message-section">
+
     <div class="message-box">
-      <h2>A New View Awaits 🌅</h2>
+      <img src="flower1.jpg" class="flower flower-top-left">
+      <img src="flower2.jpg" class="flower flower-top-right">
+      <img src="flower3.jpg" class="flower flower-bottom-left">
+      <img src="flower4.jpg" class="flower flower-bottom-right">
 
-      Every birthday is like standing on a mountain at sunrise.<br><br>
-
-      You don’t always notice how far you’ve climbed —  
-      the early mornings, the quiet efforts, the unseen struggles —  
-      but the view keeps getting better.<br><br>
-
-      As this new year begins, may it bring you calm strength,  
-      steady growth, and moments that feel peaceful and real.<br><br>
-
-      Keep climbing at your own pace.  
-      The mountains aren’t going anywhere — and neither is your journey.
+      <div class="text-content">
+        <h2>A New View Awaits 🌅</h2>
+        <p>
+          Every birthday is like standing on a mountain at sunrise.<br><br>
+          You don’t always notice how far you’ve climbed — the early mornings,
+          the quiet efforts, the unseen struggles — but the view keeps getting better.<br><br>
+          As this new year begins, may it bring calm strength, steady growth,
+          and moments that feel peaceful and real.<br><br>
+          Keep climbing at your own pace.
+        </p>
+      </div>
     </div>
+
   </section>
 
+  <div class="journey">
+    Some days are remembered.<br>
+    Some moments are felt.<br><br>
+    And some memories deserve to be opened slowly.
+  </div>
+
+  <div class="mystery-section">
+    <h2>A Small Surprise Awaits 🎁</h2>
+
+    <div class="gift-box" id="mysteryBox">
+      <div class="ribbon-vertical"></div>
+      <div class="ribbon-horizontal"></div>
+      <div class="bow">🎀</div>
+      <span class="gift-text">Open Gift</span>
+    </div>
+
+    <div class="memory-viewer" id="memoryViewer">
+      <img id="memoryImage" src="">
+      <p id="memoryCounter"></p>
+    </div>
+  </div>
+
   <footer>
-    Made with ❤️ by Panda
+    Made with ❤️ by Utsav
   </footer>
+
+  <script>
+    // List your photos here
+    const images = [
+      "photo1.jpg",
+      "photo2.jpg",
+      "photo3.jpg",
+      "photo4.jpg"
+    ];
+
+    let index = 0;
+    const box = document.getElementById("mysteryBox");
+    const viewer = document.getElementById("memoryViewer");
+    const img = document.getElementById("memoryImage");
+    const counter = document.getElementById("memoryCounter");
+
+    box.addEventListener("click", () => {
+      // 1. Trigger the Confetti Explosion
+      confetti({
+        particleCount: 200,
+        spread: 80,
+        origin: { y: 0.6 },
+        colors: ['#ff5f6d', '#ffc371', '#ffffff'] // Matches your theme
+      });
+
+      // 2. Smoothly hide box and show viewer
+      box.style.opacity = "0";
+      box.style.transform = "scale(0.8)";
+      
+      setTimeout(() => {
+        box.style.display = "none";
+        viewer.style.display = "block";
+        showNext();
+      }, 600); // Waits for fade out before switching
+    });
+
+    function showNext() {
+      // Logic to loop images or stop at the end
+      if (index < images.length) {
+        img.src = images[index];
+        counter.textContent = `Memory ${index + 1} of ${images.length}`;
+        index++;
+        setTimeout(showNext, 3000); // 3 seconds per photo
+      } else {
+        // Optional: Reset to start or just stop
+        // index = 0; setTimeout(showNext, 3000); // Uncomment to loop
+      }
+    }
+  </script>
 
 </body>
 </html>
-
