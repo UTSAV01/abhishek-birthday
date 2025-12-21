@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>Happy Birthday Abhishek 🌄</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -16,128 +16,132 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #1e3c72, #f7b733);
       color: #fff;
-      overflow-x: hidden;
+      background: #000;
     }
 
-    header {
-      min-height: 100vh;
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.45),
+          rgba(0,0,0,0.65)
+        ),
+        url('mountain.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 20px;
-      position: relative;
     }
 
-    .hero {
-      max-width: 700px;
-      animation: fadeIn 2s ease;
+    .hero-content {
+      max-width: 800px;
+      animation: fadeUp 2s ease;
     }
 
-    h1 {
+    .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
       margin-bottom: 15px;
     }
 
-    h2 {
+    .hero p {
       font-size: 1.3rem;
-      font-weight: 300;
       opacity: 0.9;
     }
 
-    .sun {
-      width: 140px;
-      height: 140px;
-      background: radial-gradient(circle, #fff3b0, #f7b733);
-      border-radius: 50%;
-      margin: 40px auto;
-      box-shadow: 0 0 60px rgba(255, 223, 100, 0.8);
-      animation: rise 4s ease-out forwards;
-    }
-
+    /* MESSAGE SECTION */
     section {
-      padding: 80px 20px;
-      max-width: 900px;
+      background: #f5f5f5;
+      color: #333;
+      padding: 100px 20px;
+    }
+
+    .message-box {
+      max-width: 850px;
       margin: auto;
-      text-align: center;
-    }
-
-    section h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
-
-    .message {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.9);
       border-radius: 20px;
-      padding: 40px;
+      padding: 50px;
       font-size: 1.1rem;
-      line-height: 1.8;
+      line-height: 1.9;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      animation: fadeUp 1.5s ease;
+    }
+
+    .message-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      text-align: center;
     }
 
     footer {
       text-align: center;
       padding: 30px;
+      background: #111;
       font-size: 0.9rem;
       opacity: 0.7;
     }
 
-    .mountains {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 35%;
-      background: linear-gradient(to top, #0f2027, transparent);
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes rise {
-      from { transform: translateY(40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .message-box {
+        padding: 35px 25px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
   <div class="hero">
-    <h1>Happy Birthday</h1>
-    <h1> Abhishek </h1>
-    <h2>Another year higher. Another view clearer.</h2>
-    <div class="sun"></div>
+    <div class="hero-content">
+      <h1>Happy Birthday Abhishek</h1>
+      <p>Another year. Another sunrise. Another beautiful climb.</p>
+    </div>
   </div>
-  <div class="mountains"></div>
-</header>
 
-<section>
-  <h3>🌄 A New Sunrise</h3>
-  <div class="message">
-    Every birthday is a quiet reminder that you’ve climbed another mountain.<br><br>
+  <section>
+    <div class="message-box">
+      <h2>A New View Awaits 🌅</h2>
 
-    Some climbs were easy, some were exhausting —  
-    but you kept moving, learning, growing.<br><br>
+      Every birthday is like standing on a mountain at sunrise.<br><br>
 
-    As the sun rises on another year of your life,  
-    may it bring clarity, peace, strength, and moments that make you pause and smile.<br><br>
+      You don’t always notice how far you’ve climbed —  
+      the early mornings, the quiet efforts, the unseen struggles —  
+      but the view keeps getting better.<br><br>
 
-    Keep climbing. The views only get better from here. 🌅
-  </div>
-</section>
+      As this new year begins, may it bring you calm strength,  
+      steady growth, and moments that feel peaceful and real.<br><br>
 
-<footer>
-  Made with ❤️ by Utsav and Panda
-</footer>
+      Keep climbing at your own pace.  
+      The mountains aren’t going anywhere — and neither is your journey.
+    </div>
+  </section>
+
+  <footer>
+    Made with ❤️ by Utsav
+  </footer>
 
 </body>
 </html>
-
